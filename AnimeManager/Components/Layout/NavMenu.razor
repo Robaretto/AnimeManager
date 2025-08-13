@@ -1,0 +1,45 @@
+﻿<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                <i class="bi bi-collection-play-fill me-2"></i> Animes
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/usuarios">
+                <i class="bi bi-people-fill me-2"></i> Usuarios
+            </NavLink>
+        </div>
+
+        @if (AuthService.ObtenerUsuarioLogueado() is null)
+        {
+            <div class="nav-item px-3 mt-3">
+                <NavLink class="nav-link" href="/login">
+                    <i class="bi bi-box-arrow-in-right me-2"></i> Iniciar sesión
+                </NavLink>
+            </div>
+        }
+        else
+        {
+            <div class="nav-item px-3 mt-3">
+                <span class="text-muted small">Hola, @AuthService.ObtenerUsuarioLogueado()?.Nombre</span><br />
+                <button class="btn btn-outline-danger btn-sm mt-1 w-100" @onclick="CerrarSesion">
+                    <i class="bi bi-box-arrow-right me-1"></i> Cerrar sesión
+                </button>
+            </div>
+        }
+    </nav>
+</div>
+
+@code {
+    [Inject] private NavigationManager NavigationManager { get; set; }
+    [Inject] private AuthService AuthService { get; set; }
+
+    private void CerrarSesion()
+    {
+        AuthService.Logout();
+        NavigationManager.NavigateTo("/login");
+    }
+}

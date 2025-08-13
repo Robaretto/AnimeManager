@@ -1,0 +1,97 @@
+﻿@page "/usuarios"
+@using AnimeManager.Models
+@inject UsuarioService UsuarioService
+
+<h3>Gestión de Usuarios</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        <EditForm Model="@usuario" OnValidSubmit="@Guardar">
+            <DataAnnotationsValidator />
+            <div class="mb-3">
+                <label>Nombre</label>
+                <InputText class="form-control" @bind-Value="usuario.Nombre" />
+            </div>
+            <div class="mb-3">
+                <label>Email</label>
+                <InputText class="form-control" @bind-Value="usuario.Email" />
+            </div>
+            <div class="mb-3">
+                <label>Imagen (nombre de archivo)</label>
+                <InputText class="form-control" @bind-Value="usuario.Imagen" />
+            </div>
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <button type="button" class="btn btn-secondary" @onclick="Limpiar">Cancelar</button>
+        </EditForm>
+    </div>
+</div>
+
+<hr />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in usuarios)
+        {
+            <tr>
+                <td><img src="images/@u.Imagen" width="50" /></td>
+                <td>@u.Nombre</td>
+                <td>@u.Email</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" @onclick="() => Editar(u)">Editar</button>
+                    <button class="btn btn-danger btn-sm" @onclick="() => Eliminar(u.Id)">Eliminar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Usuario> usuarios = new();
+    private Usuario usuario = new();
+
+    protected override void OnInitialized()
+    {
+        usuarios = UsuarioService.ObtenerUsuarios();
+    }
+
+    private void Guardar()
+    {
+        if (usuario.Id == 0)
+            UsuarioService.AgregarUsuario(usuario);
+        else
+            UsuarioService.EditarUsuario(usuario);
+
+        Limpiar();
+    }
+
+    private void Editar(Usuario u)
+    {
+        usuario = new Usuario
+        {
+            Id = u.Id,
+            Nombre = u.Nombre,
+            Email = u.Email,
+            Imagen = u.Imagen
+        };
+    }
+
+    private void Eliminar(int id)
+    {
+        UsuarioService.EliminarUsuario(id);
+        usuarios = UsuarioService.ObtenerUsuarios();
+    }
+
+    private void Limpiar()
+    {
+        usuario = new Usuario();
+        usuarios = UsuarioService.ObtenerUsuarios();
+    }
+}

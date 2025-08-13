@@ -1,0 +1,14 @@
+# Ignorar binarios y carpetas temporales
+bin/
+obj/
+*.exe
+*.dll
+*.log
+
+# Configuración de usuario local
+*.user
+*.vspscc
+*.suo
+
+# Carpetas de Visual Studio
+.vs/

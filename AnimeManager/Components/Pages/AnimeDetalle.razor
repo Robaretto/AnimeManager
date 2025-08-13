@@ -1,0 +1,43 @@
+﻿@page "/anime/{id:int}"
+@using AnimeManager.Models
+@using AnimeManager.Services
+@inject AnimeService AnimeService
+@inject NavigationManager Navigation
+
+<h3 class="text-center mt-4">🎥 Detalles de @anime?.Titulo</h3>
+
+@if (anime == null)
+{
+    <div class="alert alert-warning text-center">
+        Anime no encontrado.
+    </div>
+}
+else
+{
+    <div class="container bg-white p-4 rounded shadow mt-4" style="max-width: 600px;">
+        <div class="text-center mb-3">
+            <img src="images/animes/@anime.Imagen" alt="@anime.Titulo" class="img-fluid rounded shadow" />
+        </div>
+        <p><strong>Título:</strong> @anime.Titulo</p>
+        <p><strong>Género:</strong> @anime.Genero</p>
+        <p><strong>Año:</strong> @anime.Anio</p>
+
+        <button class="btn btn-secondary mt-3" @onclick="Volver">Volver</button>
+    </div>
+}
+
+@code {
+    [Parameter] public int id { get; set; }
+
+    private Anime? anime;
+
+    protected override void OnInitialized()
+    {
+        anime = AnimeService.GetById(id);
+    }
+
+    private void Volver()
+    {
+        Navigation.NavigateTo("/");
+    }
+}

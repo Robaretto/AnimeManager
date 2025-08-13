@@ -1,0 +1,89 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\AnimeManager.styles.css",
+      "PackagePath": "staticwebassets\\AnimeManager.styles.css"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\animes\\attackontitan.png",
+      "PackagePath": "staticwebassets\\Images\\animes\\attackontitan.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\animes\\bleach.png",
+      "PackagePath": "staticwebassets\\Images\\animes\\bleach.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\animes\\deathnote.png",
+      "PackagePath": "staticwebassets\\Images\\animes\\deathnote.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\animes\\demonslayer.png",
+      "PackagePath": "staticwebassets\\Images\\animes\\demonslayer.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\animes\\fullmetal.png",
+      "PackagePath": "staticwebassets\\Images\\animes\\fullmetal.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\animes\\heroacademia.png",
+      "PackagePath": "staticwebassets\\Images\\animes\\heroacademia.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\animes\\jujutsu.png",
+      "PackagePath": "staticwebassets\\Images\\animes\\jujutsu.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\animes\\naruto.png",
+      "PackagePath": "staticwebassets\\Images\\animes\\naruto.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\animes\\onepiece.png",
+      "PackagePath": "staticwebassets\\Images\\animes\\onepiece.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\animes\\tokyoghoul.png",
+      "PackagePath": "staticwebassets\\Images\\animes\\tokyoghoul.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\Images\\default.png",
+      "PackagePath": "staticwebassets\\Images\\default.png"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\FACULTAD\\MOVIL TPS\\AnimeTP\\AnimeManager\\AnimeManager\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.AnimeManager.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.AnimeManager.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.build.AnimeManager.props",
+      "PackagePath": "build\\AnimeManager.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.buildMultiTargeting.AnimeManager.props",
+      "PackagePath": "buildMultiTargeting\\AnimeManager.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.buildTransitive.AnimeManager.props",
+      "PackagePath": "buildTransitive\\AnimeManager.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

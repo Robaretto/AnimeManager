@@ -1,0 +1,19 @@
+wwwroot\css\app.css
+wwwroot\css\bootstrap\bootstrap.min.css
+wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\Images\animes\attackontitan.png
+wwwroot\Images\animes\bleach.png
+wwwroot\Images\animes\deathnote.png
+wwwroot\Images\animes\demonslayer.png
+wwwroot\Images\animes\fullmetal.png
+wwwroot\Images\animes\heroacademia.png
+wwwroot\Images\animes\jujutsu.png
+wwwroot\Images\animes\naruto.png
+wwwroot\Images\animes\onepiece.png
+wwwroot\Images\animes\tokyoghoul.png
+wwwroot\Images\default.png
+wwwroot\index.html
+D:\FACULTAD\MOVIL TPS\AnimeTP\AnimeManager\AnimeManager\wwwroot\css\bootstrap\bootstrap.min.css.map
+D:\FACULTAD\MOVIL TPS\AnimeTP\AnimeManager\AnimeManager\wwwroot\css\app.css
+D:\FACULTAD\MOVIL TPS\AnimeTP\AnimeManager\AnimeManager\wwwroot\css\bootstrap\bootstrap.min.css
+D:\FACULTAD\MOVIL TPS\AnimeTP\AnimeManager\AnimeManager\wwwroot\index.html

@@ -1,0 +1,37 @@
+﻿@page "/login"
+@inject NavigationManager Navigation
+@inject AuthService AuthService
+
+<h3>Iniciar sesión</h3>
+
+<EditForm Model="@loginData" OnValidSubmit="IniciarSesion">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="mb-3">
+        <label>Email</label>
+        <InputText class="form-control" @bind-Value="loginData.Email" />
+    </div>
+    <div class="mb-3">
+        <label>Nombre</label>
+        <InputText class="form-control" @bind-Value="loginData.Nombre" />
+    </div>
+    <button class="btn btn-primary" type="submit">Ingresar</button>
+</EditForm>
+
+@code {
+    private LoginModel loginData = new();
+
+    private void IniciarSesion()
+    {
+        if (AuthService.Login(loginData.Email, loginData.Nombre))
+        {
+            Navigation.NavigateTo("/usuarios");
+        }
+    }
+
+    public class LoginModel
+    {
+        public string Email { get; set; } = string.Empty;
+        public string Nombre { get; set; } = string.Empty;
+    }
+}

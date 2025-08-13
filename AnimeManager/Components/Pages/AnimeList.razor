@@ -1,0 +1,141 @@
+﻿@page "/"
+@using AnimeManager.Models
+@using AnimeManager.Services
+@inject AnimeService AnimeService
+@inject AuthService AuthService
+
+<h3 class="text-center mt-4 mb-4">🌸 Lista de Animes</h3>
+
+<div class="container p-4">
+    <div class="row">
+        @foreach (var anime in listaAnimes)
+        {
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex align-items-stretch">
+                <a href="anime/@anime.Id" class="card w-100 text-decoration-none text-dark">
+                    <img src="images/animes/@anime.Imagen"
+                         class="card-img-top"
+                         alt="@anime.Titulo"
+                         style="height: 250px; object-fit: cover;"
+                         onerror="this.onerror=null;this.src='images/animes/default.png';" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@anime.Titulo</h5>
+                        <p class="card-text"><strong>Género:</strong> @anime.Genero</p>
+                        <p class="card-text"><strong>Año:</strong> @anime.Anio</p>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+
+    @if (AuthService.ObtenerUsuarioLogueado() is not null)
+    {
+        <hr />
+        <h4 class="mb-3">Agregar / Editar Anime</h4>
+
+        <EditForm Model="@anime" OnValidSubmit="@Guardar">
+            <DataAnnotationsValidator />
+            <div class="row g-2">
+                <div class="col-md-3">
+                    <InputText class="form-control" @bind-Value="anime.Titulo" placeholder="Título" />
+                </div>
+                <div class="col-md-3">
+                    <InputText class="form-control" @bind-Value="anime.Genero" placeholder="Género" />
+                </div>
+                <div class="col-md-2">
+                    <InputNumber class="form-control" @bind-Value="anime.Anio" placeholder="Año" />
+                </div>
+                <div class="col-md-4">
+                    <InputText class="form-control" @bind-Value="anime.Imagen" placeholder="Imagen (ej: naruto.png)" />
+                </div>
+            </div>
+            <div class="mt-2">
+                <button class="btn btn-success me-2" type="submit">Guardar</button>
+                <button class="btn btn-secondary" type="button" @onclick="Limpiar">Cancelar</button>
+            </div>
+        </EditForm>
+
+        <hr />
+        <h4>Listado en Tabla</h4>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var a in listaAnimes)
+                {
+                    <tr>
+                        <td>@a.Titulo</td>
+                        <td>@a.Genero</td>
+                        <td>@a.Anio</td>
+                        <td>
+                            <img src="images/animes/@a.Imagen"
+                                 width="50"
+                                 onerror="this.onerror=null;this.src='images/animes/default.png';" />
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-primary me-2" @onclick="() => Editar(a)">Editar</button>
+                            <button class="btn btn-sm btn-danger" @onclick="() => Eliminar(a.Id)">Eliminar</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center mt-4">
+            🔒 Debes iniciar sesión para agregar, editar o eliminar animes.
+        </div>
+    }
+</div>
+
+@code {
+    private List<Anime> listaAnimes = new();
+    private Anime anime = new();
+
+    protected override void OnInitialized()
+    {
+        listaAnimes = AnimeService.GetAll();
+    }
+
+    private void Guardar()
+    {
+        if (anime.Id == 0)
+            AnimeService.Add(anime);
+        else
+            AnimeService.Update(anime);
+
+        Limpiar();
+    }
+
+    private void Editar(Anime a)
+    {
+        anime = new Anime
+        {
+            Id = a.Id,
+            Titulo = a.Titulo,
+            Genero = a.Genero,
+            Anio = a.Anio,
+            Imagen = a.Imagen
+        };
+    }
+
+    private void Eliminar(int id)
+    {
+        AnimeService.Delete(id);
+        listaAnimes = AnimeService.GetAll();
+    }
+
+    private void Limpiar()
+    {
+        anime = new Anime();
+        listaAnimes = AnimeService.GetAll();
+    }
+}
