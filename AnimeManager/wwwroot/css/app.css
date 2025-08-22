@@ -107,6 +107,21 @@ html, body {
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
+.navbar-gradient {
+    background: linear-gradient(to right, #444, #999);
+}
+.text-pink {
+    color: #e91e63 !important;
+}
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.navbar-brand span {
+    color: #e83e8c; /* Rosa anime */
+    font-weight: bold;
+}
 .page {
     background: transparent;
 }
