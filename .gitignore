@@ -1,19 +1,27 @@
-# Carpetas de build / IDE
-**/bin/
-**/obj/
-.vs/
-*.user
-*.suo
-*.cache
-*.log
+# ----------------------------------------
+# 🔧 Carpetas de compilación
+bin/
+obj/
 
-# Binarios
+# 🔧 Visual Studio
+.vs/
+*.suo
+*.user
+*.vspscc
+*.cache
+
+# 🧪 Archivos de build y debug
 *.exe
 *.dll
 *.pdb
+*.log
 
-# Otros
+# 🔄 Archivos temporales
 *.tmp
 *.db
 *.db-wal
 *.db-shm
+
+# 🧪 Archivos ocultos del sistema (macOS/Linux)
+.DS_Store
+Thumbs.db
