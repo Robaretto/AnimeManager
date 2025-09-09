@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using AnimeManager.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 
 namespace AnimeManager
@@ -19,9 +20,10 @@ namespace AnimeManager
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddSingleton<UsuarioService>();
             builder.Services.AddSingleton<AnimeService>();
+            builder.Services.AddHttpClient<TodoService>(); 
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
